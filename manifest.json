@@ -1,0 +1,34 @@
+
+{  "description": "Get and set your to do lists with this super simple to do list app.",
+  "name": "To Do",
+  "short_name": "To Do",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "teal",
+  "background_color": "white",
+  "icons": [
+    {
+      "src": "todomask.png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check List",
+      "short_name": "List",
+      "description": "Get and set your lists.",
+      "url": "/",
+      "display": "standalone",
+      "theme_color": "teal",
+      "background_color": "white",
+      "icons": [{ 
+        "src": "todomask.png",
+        "sizes": "192x192",
+        "purpose": "maskable"
+       }]
+    }
+    
+  ]
+}

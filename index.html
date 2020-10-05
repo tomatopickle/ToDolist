@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    	<meta name="google-signin-client_id" content="231496252466-fmkthakom98ugutsjcl0c9217m5p30sj.apps.googleusercontent.com">
+    <meta name="theme-color" content="teal">
+     <link rel="manifest" href="manifest.json">
+    <meta charset="utf-8">
+    <script defer type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+    </script>
+    <title>To Do</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href='to-do-list.png'/>
+     <link rel="apple-touch-icon" href='to-do-list.png'/>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body onload="loaded()">
+     <script src="swipe.js"></script>
+    <script src="script.js"></script>
+    <header>      
+      <img id="logo" width="50px" height="50px" src="todomask.png"/>
+      <div id="name" class="center-align">To Do</div>
+    </header>
+  <a id="add"  class="waves-effect btn-floating btn-large  modal-trigger" href="#modal1"><i  class="material-icons">add</i></a>
+<div id="none"><img id="done" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ2MC44IDQ2MC44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0zNzEuMiwzOC40aC02NFYxMi44YzAtNy4wNzEtNS43MjktMTIuOC0xMi44LTEyLjhoLTEyOGMtNy4wNzEsMC0xMi44LDUuNzI5LTEyLjgsMTIuOHYyNS42aC02NCAgICBjLTIxLjIwNywwLTM4LjQsMTcuMTkzLTM4LjQsMzguNHYzNDUuNmMwLDIxLjIwNywxNy4xOTMsMzguNCwzOC40LDM4LjRoMjgxLjZjMjEuMjA3LDAsMzguNC0xNy4xOTMsMzguNC0zOC40Vjc2LjggICAgQzQwOS42LDU1LjU5MywzOTIuNDA3LDM4LjQsMzcxLjIsMzguNHogTTE3OS4yLDI1LjZoMTAyLjR2MjUuNkgxNzkuMlYyNS42eiBNMzcxLjIsNDIyLjRIODkuNlY3Ni44aDI4MS42VjQyMi40eiIgZmlsbD0iIzAwODA4MCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjE4Mi45NDgsMTEyLjA5NyAxNDYuNzQ0LDE0OC4yOTYgMTI4LjY0LDEzMC4xOTcgMTEwLjU0MSwxNDguMjk2IDE0Ni43NDQsMTg0LjUwNCAyMDEuMDUyLDEzMC4xOTcgICAiIGZpbGw9IiMwMDgwODAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcG9seWdvbj4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHJlY3QgeD0iMjE3LjYiIHk9IjExNS4yIiB3aWR0aD0iMTI4IiBoZWlnaHQ9IjI1LjYiIGZpbGw9IiMwMDgwODAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcmVjdD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHJlY3QgeD0iMjE3LjYiIHk9IjE2Ni40IiB3aWR0aD0iNzYuOCIgaGVpZ2h0PSIyNS42IiBmaWxsPSIjMDA4MDgwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3JlY3Q+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMTgyLjk0OCwyMTQuNDk3IDE0Ni43NDQsMjUwLjY5NiAxMjguNjQsMjMyLjU5NiAxMTAuNTQxLDI1MC42OTYgMTQ2Ljc0NCwyODYuOTA0IDIwMS4wNTIsMjMyLjU5NiAgICIgZmlsbD0iIzAwODA4MCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wb2x5Z29uPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cmVjdCB4PSIyMTcuNiIgeT0iMjE3LjYiIHdpZHRoPSIxMjgiIGhlaWdodD0iMjUuNiIgZmlsbD0iIzAwODA4MCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9yZWN0PgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cmVjdCB4PSIyMTcuNiIgeT0iMjY4LjgiIHdpZHRoPSI3Ni44IiBoZWlnaHQ9IjI1LjYiIGZpbGw9IiMwMDgwODAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcmVjdD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBvbHlnb24gcG9pbnRzPSIxODIuOTQ4LDMxNi44OTcgMTQ2Ljc0NCwzNTMuMDk2IDEyOC42NCwzMzQuOTk2IDExMC41NDEsMzUzLjA5NiAxNDYuNzQ0LDM4OS4zMDQgMjAxLjA1MiwzMzQuOTk2ICAgIiBmaWxsPSIjMDA4MDgwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BvbHlnb24+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxyZWN0IHg9IjIxNy42IiB5PSIzMjAiIHdpZHRoPSIxMjgiIGhlaWdodD0iMjUuNiIgZmlsbD0iIzAwODA4MCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9yZWN0PgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cmVjdCB4PSIyMTcuNiIgeT0iMzcxLjIiIHdpZHRoPSI3Ni44IiBoZWlnaHQ9IjI1LjYiIGZpbGw9IiMwMDgwODAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcmVjdD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" />
+<h6 id="donehead">Wow! all done.</h6> <small id="small">Click the button in the bottom right corner to add something to the list.</small></div>
+<div id="timed">Loading</div>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Type the name and time: </h4>
+      <p><input id="input" value="Wash the car"/></p>
+      <p><input type="time" id="time"  value=""/></p>
+    </div> 
+    <div  class="modal-footer">
+      <a onclick="add()" href="#!" class="modal-close waves-effect waves-light btn-flat">Add</a>
+      <a  href="#!" class="modal-close waves-effect waves-light btn-flat">Cancel</a>
+  </div>
+  </div>
+  <!--Modal Ended-->
+	<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <p id="tap">Tap this button to add something !</p>
+  	<div class="sing" id="my-signin2"></div>
+    <div id="list"></div>
+  </body>
+</html>

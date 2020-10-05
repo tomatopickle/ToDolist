@@ -1,0 +1,121 @@
+#add{
+  bottom : 15px;
+  right: 7.5px;
+  position: fixed;
+  animation:  comeadd 1s;
+}
+.list{
+  background-color: white;
+  padding: 5px;
+  font-size: 25px;
+  text-align: left;
+  margin: 15px;
+  border-radius: 5px;
+  transition: all 2s;
+}
+body{
+  background-color: rgb(233, 233, 233);
+}
+#tap{
+  background-color: white;
+  color: black;
+  z-index: 5;
+  border-radius: 5px;
+  padding: 5px;
+  position: fixed; 
+  right: -250px;
+  bottom : 15px;
+}
+@keyframes some{
+  50%{
+    right: 70px;
+  }
+}
+.tap{
+  animation: 12.5s some;
+}
+#done{
+  top: 21%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+}
+#donehead{
+  top: 35%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#small{
+  top: 42.5%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#none{
+  display: none;
+}
+.badge{
+  background-color: teal;
+  border-radius: 5px;
+}
+#timed{
+  position: fixed;
+  background-color: teal;
+  border-radius: 5px;
+  color: white;
+  left: 5px;
+  bottom: 5px;
+  z-index: 5;
+  padding: 5px;
+  font-size: 15px;
+  animation:  come 1s;
+}
+@keyframes come{
+  0%{
+    bottom: -50px;
+  }
+}
+@keyframes comeadd{
+  0%{
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(90deg);
+    background-color: white;
+  }
+}
+pwa-update{
+  display: none;
+}
+.sing{
+position: fixed;
+top: 0;
+right: 0;
+width: 50px;
+height: 50px;
+transition: all 0.75s;
+}
+.sing:hover{
+width: 225px;
+}
+#logo{
+  border-radius: 50000000px;
+  padding: 5px;
+  background-color: teal;
+}
+header{
+  background-color: teal;
+}
+#name{
+  position: fixed;
+  top: 25px;
+  color: white;
+  font-size: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+::selection{
+  background-color: teal;
+}
