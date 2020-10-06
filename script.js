@@ -1,4 +1,5 @@
 function add(){
+  window.navigator.vibrate(300);
   document.getElementById('none').style.display = 'none';
   document.getElementById('add').classList.remove('pulse');
   if(document.getElementById('time').value != ''){
@@ -11,6 +12,19 @@ list = localStorage.getItem('list');
 list = list.split(',');
 console.log(list);
 document.getElementById('list').innerHTML = document.getElementById('list').innerHTML + '<p    class = "list"><span class="badge" style="color: white;">'+document.getElementById('time').value+'</span>' + document.getElementById('input').value + '</p>';
+//to add dark mode 
+ const div = document.getElementsByTagName('body')[0];
+ var q = div.classList.contains('dark');
+  console.log(q);
+  if(q==true){
+  for( var i=0; i < document.getElementsByClassName('list').length;i++){
+    x = x+1
+   document.getElementsByClassName('list')[x].classList.add('darklight'); 
+  }
+  }else{
+    document.getElementsByClassName('list')[x].classList.add('remove'); 
+  }
+  
 badgecheck()
 time();
 }

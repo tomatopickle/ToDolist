@@ -24,3 +24,12 @@ if(num != '' ){
 }
 }
 }
+function search(){
+var instance = new Mark('body');
+instance.unmark();
+var instance = new Mark("body");
+instance.mark(document.getElementById('search').value);
+}
+ $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });

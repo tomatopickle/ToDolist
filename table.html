@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
     <meta name="theme-color" content="teal">
      <link rel="manifest" href="manifest.json">
     <meta charset="utf-8">
@@ -24,9 +25,28 @@
 <body onload="loaded()">
      <script src="swipe.js"></script>
     <script src="table.js"></script>
-    <input id="search" placeholder="Type a hour to search"/>
+    <header>      
+       <a href="#" data-target="slide-out" class="sidenav-trigger"><img id="logo" width="50px" height="50px" src="todomask.png"/></a>
+      <div id="name" class="center-align">To Do</div>
+    </header>    
+    <input onblur="var instance = new Mark('body');instance.unmark();" oninput="search()" id="search" placeholder="Type a term to search"/>
 <ul class="collection" id="time" >
 </ul>
+  <ul id="slide-out"  class="sidenav ">
+    <li><div class="user-view">
+      <div class="background">
+        <img src='https://cdn5.f-cdn.com/contestentries/1476645/3722903/5c790acfaed94_thumb900.jpg'/>
+      </div>
+      <a href="#!"><img class="circle" src="todomask.png"></a>
+      <a href="#name"><span class="white-text name">To Do</span></a>
+    </div></li>
+    <li><a class="waves-effect" href="https://about-the-developer.abaanshanid.repl.co/"><i class="material-icons">person</i>About the developer</a></li>
+    <li><a class="waves-effect" href="table.html"><i class="material-icons">toc</i>List view (beta)</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Settings</a></li>
+    <li><a onclick="toggle()" class="waves-effect" href="#!"><i class="material-icons">brightness_medium
+</i>Toggle Dark mode</a></li>
+  </ul>
 <style>
 .collection-item:hover{
   background-color: rgb(233, 233, 233);
