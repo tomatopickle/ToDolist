@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="theme-color" content="teal">
+     <link rel="manifest" href="manifest.json">
+    <meta charset="utf-8">
+    <script defer type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+    </script>
+    <title>To Do</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href='to-do-list.png'/>
+     <link rel="apple-touch-icon" href='to-do-list.png'/>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+<body onload="loaded()">
+     <script src="swipe.js"></script>
+    <script src="table.js"></script>
+    <input id="search" placeholder="Type a hour to search"/>
+<ul class="collection" id="time" >
+</ul>
+<style>
+.collection-item:hover{
+  background-color: rgb(233, 233, 233);
+ 
+}
+.collection-item{
+ transtion : all 5s;
+}
+</style>
+  </body>
+</html>

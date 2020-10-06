@@ -16,8 +16,12 @@ time();
 }
   $(document).ready(function(){
     $('.modal').modal();
+    $('.sidenav').sidenav();
   });
-  function loaded(){
+  function loaded(){ 
+    if(localStorage.getItem('theme')=='dark'){
+   toggle();
+    }
     if (localStorage.getItem('visited')!= 'true'){
 document.getElementById('tap').classList.add('tap');
 }else{
@@ -187,8 +191,9 @@ const requestNotificationPermission = async () => {
 }
 const showLocalNotification = (title, swRegistration) => {
     const options = {
-      body,
-      vibrate: [200, 100, 200]
+      body : body,
+      vibrate: [200, 100, 200],
+      icon : 'https://www.iconfinder.com/data/icons/computer-20/64/alarm-512.png'
     };
     swRegistration.showNotification(title, options);
 }
@@ -197,4 +202,22 @@ const main = async () => {
     const swRegistration = await registerServiceWorker();
     const permission =  await requestNotificationPermission();
     showLocalNotification('Alert !',swRegistration);
+}
+function toggle(){
+  document.getElementsByTagName('body')[0].classList.toggle('dark');
+  x = -1;
+  for( var i=0; i < document.getElementsByClassName('list').length;i++){
+    x = x+1
+   document.getElementsByClassName('list')[x].classList.toggle('darklight'); 
+  }
+  x = -1;
+document.getElementById('modalhead').style.color = 'black';
+ const div = document.getElementsByTagName('body')[0];
+ var q = div.classList.contains('dark');
+  console.log(q);
+  if(q==true){
+ localStorage.setItem('theme','dark')
+  }else{
+  localStorage.setItem('theme','light')
+  }
 }
